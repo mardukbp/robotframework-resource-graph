@@ -1,0 +1,26 @@
+[project]
+name = "robotframework-resource-graph"
+version = "1.0.0"
+description = "Generate and visualize the dependency graph of Resource imports in Robot Framework"
+authors = [
+    {name = "Marduk Bolanos", email = "mardukbp@mac.com"},
+]
+dependencies = [
+    "robotframework>=7.0.1",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "Apache 2.0"}
+
+[tool.flit.module]
+name = "RobotGraph"
+
+[project.scripts]
+robot-graph = "RobotGraph.gen_graph:run"
+
+[build-system]
+requires = ["flit_core>=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.pdm]
+distribution = true
