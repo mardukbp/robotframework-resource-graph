@@ -152,18 +152,19 @@ def run():
         resources = rec_get_resources(resource, defaultdict(lambda: 0))
         graph = output_mermaid(input_file, resources)
         output = output_html(graph)
-        output_file = input_file + ".deps.html"
+        extension = ".html"
     elif output_format == "JSON":
         resources = rec_get_resources(resource, defaultdict(lambda: 0))
         output = output_json(input_file, resources)
-        output_file = input_file + ".deps.json"
+        extension = ".json"
     elif output_format == "Mermaid":
         resources = rec_get_resources(resource, defaultdict(lambda: 0))
         output = output_mermaid(input_file, resources)
-        output_file = input_file + ".deps.mermaid"
+        extension = ".mermaid"
     else:
         print("The output format must be either HTML, JSON or Mermaid")
         sys.exit(1)
 
+    output_file = get_relative_path(str(Path(input_file).absolute())).replace('\\', '.') + ".deps" + extension
     with open(output_file, "wt", encoding='utf-8') as file:
         file.write(output)
