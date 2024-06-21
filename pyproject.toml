@@ -1,6 +1,6 @@
 [project]
 name = "robotframework-resource-graph"
-version = "1.0.0"
+version = "1.1.0"
 description = "Generate and visualize the dependency graph of Resource imports in Robot Framework"
 authors = [
     {name = "Marduk Bolanos", email = "mardukbp@mac.com"},
