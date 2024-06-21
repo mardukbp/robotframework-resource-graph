@@ -116,7 +116,7 @@ def output_mermaid(input_file, resources):
     node_ids = defaultdict(lambda: gen_id())
     
     return "\n".join(
-        ["flowchart LR"] + 
+        ["flowchart-elk TD"] + 
         rec_gen_graph(
             gen_node(node_ids[abs_path], get_relative_path(abs_path)),
             resources,
