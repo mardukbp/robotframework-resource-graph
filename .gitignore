@@ -1,4 +1,5 @@
 *.html
+!template.html
 *.json
 
 # Byte-compiled / optimized / DLL files
